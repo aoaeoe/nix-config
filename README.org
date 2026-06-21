@@ -1,4 +1,4 @@
-* This my nixos config.
+* This is the NixOS configuration ofr multiple operating system on a SSD.
 Install emacs so slowly, so slowly. You'd better install emacs with another way.(Comment out all Emacs-related code.)
 
 config proxy, and set global http prox, for example:
