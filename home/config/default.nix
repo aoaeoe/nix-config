@@ -1,0 +1,10 @@
+{ ... }:
+{
+  imports = [
+    ./alacritty 
+    ./git
+    ./emacs
+  ];
+
+}
+

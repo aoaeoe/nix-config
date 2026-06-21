@@ -1,0 +1,54 @@
+{ config, lib, pkgs, ... }:
+
+{
+  # all fonts are linked to /nix/var/nix/profiles/system/sw/share/X11/fonts
+  fonts = {
+    # use fonts specified by user rather than default ones
+    enableDefaultPackages = false;
+    fontDir.enable = true;
+
+    packages = with pkgs; [
+      # icon fonts
+      material-design-icons
+      font-awesome
+
+      noto-fonts # No Chinese
+      noto-fonts-cjk-sans # Chinese
+      noto-fonts-color-emoji
+      noto-fonts
+
+      # Adobe SiYuan
+      source-sans # No Chinese. Including `Source Sans 3` `Source Sans Pro` `Source Sans 3 VF`
+      source-serif # No Chinese.
+      source-code-pro #Source Code Pro
+      source-han-sans # Chinese HeiTi
+      source-han-serif # Chinese Song
+
+      # Other Fonts
+      lxgw-wenkai
+
+      # Code and Symbol
+      cascadia-code
+
+      # Chinese
+      wqy_zenhei
+      wqy_microhei
+
+      # nerdfonts
+      nerd-fonts.fira-code
+
+      #(pkgs.callPackage ../../fonts/icomoon-feather-icon-font.nix { })
+
+      # arch linux icon, used temporarily in waybar
+      #(pkgs.callPackage ../../fonts/archcraft-icon-font.nix { })
+
+    ];
+
+    fontconfig.defaultFonts = {
+      serif = [ "FiraCode Nerd Font" "FiraCode Nerd Font" ];
+      sansSerif = [ "FiraCode Nerd Font" "FiraCode Nerd Font" ];
+      monospace = [ "FiraCode Nerd Font" "Noto Color Emoji" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
+}
