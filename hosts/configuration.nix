@@ -126,6 +126,8 @@
     killall
     alsa-lib
     alsa-utils
+
+    librime
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
